@@ -1,8 +1,7 @@
 # Deploying the Trigger service to Cloud Function
 
-1. Navigate inside the trigger_function folder
 
-2. Create a file named .env.yaml at the root of this folder. Copy the contents of placeholder.env.yaml and set the values
+1. Create a file named `.env.yaml` at the root of this folder. Copy the contents of `placeholder.env.yaml` and set the values
 
 ```
 # Google Cloud project ID
@@ -26,7 +25,7 @@ SLACK_BEARER_TOKEN: ""
 SLACK_CHANNEL_ID: ""
 ```
 
-3. To deploy, run
+2. To deploy, run
 ```
 sh deploy.sh
 ```
