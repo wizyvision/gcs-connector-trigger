@@ -5,16 +5,16 @@
 
 ```
 # Google Cloud project ID
-GOOGLE_CLOUD_PROJECT: "wv-gcs-connector-dev"
+GOOGLE_CLOUD_PROJECT: "INPUT_YOUR_GOOGLE_CLOUD_PROJECT_HERE"
 
 # Region where this service will be deployed
 GCLOUD_REGION: "europe-west1"
 
 # Cloud storage bucket name where the files will be uploaded
-BUCKET_NAME: ""
+BUCKET_NAME: "INPUT_YOUR_GOOGLE_CLOUD_STORAGE_HERE"
 
 # Uploader service endpoint
-UPLOADER_SERVICE: "https://wv-gcs-connector-dev.ew.r.appspot.com/run"
+UPLOADER_SERVICE: "<INPUT_SERVICE_ENDPOINT_HERE>/run"
 
 # Header and token to be authenticated to call the Uploader service
 UPLOADER_SERVICE_AUTH_HEADER: "Wizdam-Dev-Csc-Token"
