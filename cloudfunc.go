@@ -7,6 +7,7 @@ import (
 	"net/url"
 	"os"
 
+	"test.com/gocloudfunc/logger"
 	"test.com/gocloudfunc/notifications"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
@@ -32,7 +33,7 @@ type Data struct {
 func gcsConnectorTrigger(ctx context.Context, event event.Event) error {
 	data := &Data{}
 	if err := event.DataAs(data); err != nil {
-		fmt.Printf("Got Data Error: %s\n", err.Error())
+		logger.LogError("Got Data Error", err.Error())
 	}
 	fmt.Printf("ID: %+v \nName: %+v \n MediaLink: %+v \n Size: %+v \n Bucket: %+v \n ContentType: %+v \n ComponentCount: %+v \n",
 		data.ID,
@@ -52,13 +53,13 @@ func gcsConnectorTrigger(ctx context.Context, event event.Event) error {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		fmt.Println("Error creating request: ", err)
+		logger.LogError("Error creating request: ", err.Error())
 	}
 	setAuth(req)
 
 	response, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Error calling request: ", err)
+		logger.LogError("Error calling request: ", err.Error())
 		errMsg := &notifications.Message{
 			Pretext: "[Trigger] Failed on creating task.",
 			Text: fmt.Sprintf("Error: %s \nID: %+v \nName: %+v \n MediaLink: %+v \n Size: %+v \n Bucket: %+v \n ContentType: %+v \n ComponentCount: %+v \n",
