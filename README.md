@@ -1,6 +1,6 @@
 # Google Cloud Storage Connector
 
-> This repo contains the **Trigger** app that is deployed in Cloud Function. To run the whole Storage connector, you will also need the [**Uploader**](https://github.com/sephdiza/gcs-connector) to be deployed in Cloud Run.
+> Note: This repo contains the **Trigger** app that is deployed in Cloud Function. To run the whole GCS connector, you will also need the [**Uploader**](https://github.com/wizyvision/gcs-connector-uploader) to be deployed in Cloud Run.
 
 
 GCS Connector uploads files on WizyVision, on every files that will be uploaded in the source GCS bucket.
