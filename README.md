@@ -1,7 +1,19 @@
-# Deploying the Trigger service to Cloud Function
+# Google Cloud Storage Connector
+
+> This repo contains the **Trigger** app that is deployed in Cloud Function. To run the whole Storage connector, you will also need the [**Uploader**](https://github.com/sephdiza/gcs-connector) to be deployed in Cloud Run.
 
 
-1. Create a file named `.env.yaml` at the root of this folder. Copy the contents of `placeholder.env.yaml` and set the values
+GCS Connector uploads files on WizyVision, on every files that will be uploaded in the source GCS bucket.
+
+
+![gcs connector](https://user-images.githubusercontent.com/4800851/211000369-70e9be5f-36a6-4e60-8232-f6b73d892d8b.png)
+
+
+## Installation
+1. Install Go 1.17
+2. Clone this repo
+3. Run `go mod tidy`
+4. Create a file named `.env.yaml` at the root of this folder. Copy the contents of `placeholder.env.yaml` and set the values
 
 ```
 # Google Cloud project ID
